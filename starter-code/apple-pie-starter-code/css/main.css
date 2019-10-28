@@ -46,10 +46,12 @@ ul{
   text-align: center;
 }
 
-/* ol{
-  list-style: none;
-} */
+ol{
+  counter-reset: section;  /*  reseteas la numeracion   */
+  list-style: none;       /* borras la numeracion */
+}
 
 #directions li::before{
-  content: ')';
+  counter-increment: section; /* con esta instruccion le pones otra vez la numeracion sin el punto */
+  content: counter(section) ") "; /* y con esta añades el parentesis */
 }
